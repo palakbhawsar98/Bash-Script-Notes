@@ -56,8 +56,8 @@ Use back tick ` ` to print output of the command
  ./hello.sh
  
 ```
-$? ---- Exit status of last run command, 0 means success and anything else indicates failure.
-$0 ---- File name of our script
-$1..$n ---- Script arguements
-$# ----- number of args that our script was run with
+- $? ---- Exit status of last run command, 0 means success and anything else indicates failure.
+- $0 ---- File name of our script
+- $1..$n ---- Script arguements
+- $# ----- number of args that our script was run with
 
