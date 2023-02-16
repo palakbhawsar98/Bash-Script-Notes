@@ -22,9 +22,7 @@ Bash script starts with **#!** referred as the shebang followed by **/bin/bash**
  bash script_name.sh
  OR
 ./script_name.sh
- 
 ```
-
 ### Script to print Hello Wrld!
 ```
 #!/bin/bash
@@ -58,7 +56,7 @@ Variables are used to store information.
 ## To store information use below syntax
 
 ```
-
+Variable-name="Variable-value"
 ```
 ```
 echo $variable-name
@@ -69,50 +67,75 @@ echo $user ---> john
 ```
 Print environment variables
 ```
-echo "This is user ${user} in the team"
+echo "This is user ${user} in the team" -----> This is user john in the team
 ```
-Use back tick ` ` to print output of the command
+### Command subsitution using back ticks
+Use back tick to print output of the command as shown below
 ```
- echo "There are `wc -l > hello.txt` files in media directory"
+ echo "There are `wc -l > hello.txt` lines in hello.txt file" -----> There are 5 lines in hello.txt file
 ```
+### Command line arguments
 
+- $? ---- Exit status of last run command, 0 means success and non-zero indicates failure.
+- $0 ---- File name of our script
+- $1..$n ---- Script arguements
+- $# ----- number of args that our script was run with
+
+- $? ---- Exit status of last run command, 0 means success and anything else indicates failure.
+#### Example:
+```
+ls -l
+$? --> 0 (meaning command was succesful)
+lsss -l
+$? ---> Non-zero value (meaning commnad was not succesful or wrong command)
+```
+- $0 ---- File name of our script
+- $1..$n ---- Script arguements
+#### Example:
+```
+#!/bin/bash
+echo "Script name is $0"
+echo "First argument passed is $1"
+echo "Second argument passed is $2"
+```
+#### Run the above script, consider name of script is hello.sh and arguments are Hello and World
+./hello.sh Hello World
+#### Output
+```
+Script name is hello.sh
+First argument passed is Hello
+Second argument passed is World
+```
+### Quotes in Bash
+```
+echo "The user is $USER" --> The user is John
+echo 'The user is $USER' --> The user is $USED
+```
+### Export variables in Bash
+In every user home directory there is a hidden file called .bashrc. If you place export variable and value this file. It will become permanent export variable. We often use it for setting envirnment variables like JAVA_HOME, MAVEN_HOME.
+If you want to add export variable globally for all user then edit **etc/profile** and add export variable.
+```
+ls -a
+vi .bashrc (edit this file and update export variable)
+export JAVA_HOME="usr/bin/jvm"
+```
+### Take User Input using read
+-p [will stay to take input]
+-sp [ will make password invisible when user enter]
+```
+#!/bin/bash
+echo "Enter your Name:"
+read Name
+echo "Enter username and password"
+read -p 'username: ' username
+read -sp 'password: ' psw
+
+```
 ### Bash commands
 
 Find shell in the terminal
 ```
 echo $shell
 ```
-Ping in the terminal
-```
-ping ip-address/domain-name/
-```
-Print "Hello world" in terminal
-```
-echo "Hello World"
-```
-Redirecting output > will override >> will append
-```
-echo "Hello World" > hello.txt ----> Hello World
-echo "Welcome," > hello.txt ------> Welcome,
-echo "How are you?" >> hello.txt ------> Welcome, How are you?
-```
-Count number of lines in file
-```
-wc -l > hello.txt
-cat hello.txt | wc -l
-```
-Conditiona AND && ---- both condition should be true
-```
-cat hello.txt && echo "Successful"
-```
-Conditiona OR || ---- Any one condition should be true
-```
-cat hel.txt || echo "Successful"
-```
 
-
-- $? ---- Exit status of last run command, 0 means success and anything else indicates failure.
-- $0 ---- File name of our script
-- $1..$n ---- Script arguements
-- $# ----- number of args that our script was run with
 
