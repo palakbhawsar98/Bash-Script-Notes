@@ -129,8 +129,54 @@ read Name
 echo "Enter username and password"
 read -p 'username: ' username
 read -sp 'password: ' psw
+```
+### If else elif statements
+```
+If [condition]
+then
+  something
+elif
+  something
+else
+  something
+fi  
+```
+### Operators in Bash
+ - ==
+ - !=
+ - >=
+ - <=
+ - '>'
+ - '<'
+ - &&
+ - ||
+ - !
+ 
+- b operator: Checks whether a file is a block special file or not. 
+- c operator: Checks whether a file is a character special file or not. 
+- d operator: This operator checks if the given directory exists or not. 
+- e operator: This operator checks whether the given file exists or not. 
+- r operator: This operator checks whether the given file has read access or not. 
+- w operator: This operator check whether the given file has write access or not.
+- x operator: This operator check whether the given file has execute access or not. 
+- s operator: This operator checks the size of the given file. 
+
+### For Loop
+```
+for variable in <list>
+do
+  something
+done  
+```
+### While Loop
 
 ```
+while [condition]
+do 
+ something
+done 
+```
+
 ### Bash commands
 
 Find shell in the terminal
