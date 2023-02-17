@@ -4,13 +4,21 @@
 Bash stands for Bourne Again Shell. A Bash Shell Script is a plain text file containing a set of various commands that we usually type in the command line. It is used to automate repetitive tasks on Linux. To automate day to day automation task, system admins write bash script in Linux system.
 Bash script has .sh extension but the extension is not mandatory.
 
-### Advantages of Bash scripting
+### What is Shell
+A Shell is basically a command-line interpreter between user and kernel or a complete environment specially designed to run commands, shell scripts, and programs.
+
+### Advantages of Shell Script
 - Easy to use
 - Time saving
 - Automated
 - Can be installed on all Linux system
 - Portable
 - Can run multiple commands
+
+### Disadvantages of Shell Script
+- There may be errors in shell scripting that prove to be quite costly.
+- The programs in shell script are quite slow while executing and a new process is required for every shell command executed.
+- Different platforms in shell scripting may also have compatibility problems.
 
 ### First Bash script
 Bash script starts with **#!** referred as the shebang followed by **/bin/bash** it actually tells the path of the interpreter to execute the commands in the script.
